@@ -42,5 +42,5 @@ $aLang = array(
     'tbclpl_analytics_setup'            => 'Google Analytics',
     'PL_ANALYTICS_CONFIG_ga_ua_id'      => 'Google Analytics UA-Tracking',
     'PL_ANALYTICS_CONFIG_ga_domain'     => 'Domainname',
-    'PL_ANALYTICS_CONFIG_' 							=> '',
+    'PL_ANALYTICS_CONFIG_'              => '',
 );

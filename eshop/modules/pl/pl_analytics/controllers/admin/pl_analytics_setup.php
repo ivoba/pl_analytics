@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Google Analytics integration in OXID
  *
  * Copyright (c) 2013 Paul Lamp | paul-lamp.de
  * E-mail: pl@paul-lamp.de
  * http://www.paul-lamp.de
- * 
- * based on   
+ *
+ * based on
  * Piwik integration in OXID
  *
  * Copyright (c) 2011 Joscha Krug | marmalade.de
@@ -69,6 +70,7 @@ class pl_analytics_setup extends oxAdminDetails
     public function getConfigValues()
     {
         $oPlAnalytics = $this->getPlAnalytics();
+
         return $oPlAnalytics->getConfig();
     }
 
@@ -78,7 +80,7 @@ class pl_analytics_setup extends oxAdminDetails
      */
     public function save()
     {
-        $aParams = oxRegistry::getConfig()->getRequestParameter( "editval" );
+        $aParams = oxRegistry::getConfig()->getRequestParameter("editval");
         $oPlAnalytics = $this->getPlAnalytics();
         $oPlAnalytics->changeConfig($aParams);
     }

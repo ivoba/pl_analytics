@@ -5,8 +5,8 @@
  * Copyright (c) 2013 Paul Lamp | paul-lamp.de
  * E-mail: pl@paul-lamp.de
  * http://www.paul-lamp.de
- * 
- * based on   
+ *
+ * based on
  * Piwik integration in OXID
  *
  * Copyright (c) 2011 Joscha Krug | marmalade.de
@@ -32,12 +32,12 @@
  * IN THE SOFTWARE.
  */
 
-$sLangName  = "Deutsch";
+$sLangName = "Deutsch";
 
 // -------------------------------
 // RESOURCE IDENTITFIER = STRING
 // -------------------------------
 $aLang = array(
-	'charset'                                  => 'ISO-8859-15',
-	'HELP_PL_ANALYTICS_CONFIG_ga_ua_id'				 => 'Die UA-XXXXXX-X aus Google Analytics. Zu finden im Google Analytics Backend unter "Verwalten" -> "Property-Einstellungen": Tracking-ID',
+    'charset'                           => 'ISO-8859-15',
+    'HELP_PL_ANALYTICS_CONFIG_ga_ua_id' => 'Die UA-XXXXXX-X aus Google Analytics. Zu finden im Google Analytics Backend unter "Verwalten" -> "Property-Einstellungen": Tracking-ID',
 );

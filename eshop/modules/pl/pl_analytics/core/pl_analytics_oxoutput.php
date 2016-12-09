@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Google Analytics integration in OXID
  *
  * Copyright (c) 2013 Paul Lamp | paul-lamp.de
  * E-mail: pl@paul-lamp.de
  * http://www.paul-lamp.de
- * 
- * based on   
+ *
+ * based on
  * Piwik integration in OXID
  *
  * Copyright (c) 2011 Joscha Krug | marmalade.de
@@ -35,24 +36,25 @@
 class pl_analytics_oxoutput extends pl_analytics_oxoutput_parent
 {
     /**
-     * appends Google Analytics javascript source before body tag
+     * appends Google Analytics javascript source before closing head tag
      * if user logged in is Administrator, no tracking will be enabled
-     * TODO: Add config for tracking if Admin          
+     * TODO: Add config for tracking if Admin
      * @param $sOutput
      * @return mixed
      */
-    public function plReplaceBody( $sOutput )
+    public function plReplaceBody($sOutput)
     {
-        $blAdminUser=false;
-        $oUser=$this->getUser();
-        if ($oUser) $blAdminUser=$oUser->inGroup("oxidadmin");
-        if(!isAdmin()&&!$blAdminUser) {
+        $blAdminUser = false;
+        $oUser = $this->getUser();
+        if ($oUser) $blAdminUser = $oUser->inGroup("oxidadmin");
+        if (!isAdmin() && !$blAdminUser) {
             $oPlAnalytics = oxNew('pl_analytics');
-            if($oPlAnalytics->getGaUaId() != "UA-XXXXXXXX-X") {
-              $sGaCode = $oPlAnalytics->getPlAnalyticsCode();
-              $sOutput = str_ireplace("</body>", "{$sGaCode}\n</body>", ltrim($sOutput));
+            if ($oPlAnalytics->getGaUaId() != "UA-XXXXXXXX-X") {
+                $sGaCode = $oPlAnalytics->getPlAnalyticsCode();
+                $sOutput = str_ireplace("</head>", "{$sGaCode}\n</head>", ltrim($sOutput));
             }
         }
+
         return $sOutput;
     }
 
@@ -65,7 +67,8 @@ class pl_analytics_oxoutput extends pl_analytics_oxoutput_parent
     public function process($sValue, $sClassName)
     {
         $sValue = parent::process($sValue, $sClassName);
-        $sValue = $this->plReplaceBody( $sValue);
+        $sValue = $this->plReplaceBody($sValue);
+
         return $sValue;
     }
 }
